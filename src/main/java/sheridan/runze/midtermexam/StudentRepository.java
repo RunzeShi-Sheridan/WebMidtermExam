@@ -7,16 +7,17 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource(path = "students")
-public interface StudentRepository extends JpaRepository<Student, Long> {
+public interface StudentRepository extends JpaRepository<Student, String>
+ {
 
     List<Student> findByNameContainingIgnoreCase(@Param("name") String name);
 
     List<Student> findByEmailIgnoreCase(@Param("email") String email);
 
-    List<Student> findByGpaGreaterThan(@Param("min") long min);
+    List<Student> findByGpaGreaterThan(@Param("min") double min);
 
-    List<Student> findByGpaLessThan(@Param("max") long max);
+    List<Student> findByGpaLessThan(@Param("max") double max);
 
-    List<Student> findByGpaBetween(@Param("min") long min, @Param("max") long max);
+    List<Student> findByGpaBetween(@Param("min") double min, @Param("max") double max);
 }
 
