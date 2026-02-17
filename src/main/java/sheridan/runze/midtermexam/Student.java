@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Student {
 
     @Id
-    private String id;
+    private String studentId;
 
     private String name;
     private int age;
@@ -18,14 +18,14 @@ public class Student {
     @JsonProperty("isEnrolled")
     private boolean enrolled;
 
-    public id() {}
+    public Student() {}
 
-    public String getId() {
-        return id;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {
@@ -36,7 +36,7 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
